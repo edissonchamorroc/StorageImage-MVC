@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link th:href="@{/styles/cardStyle.css}" rel="stylesheet">
+    <title>Upload Images</title>
+</head>
+
+<body>
+    <div id="card">
+        <div id="cont-dragdrop">
+            <h3>Upload your image</h3>
+            <p>File should be Jpg, Png, Gif...</p>
+            <form id="form-file-upload">
+                <input type="file" id="input-file-upload" multiple={false} accept="image/*" />
+                <label id="label-file-upload" htmlFor="input-file-upload">
+                    <div>
+                        <p>Drag and drop your file here</p>
+                    </div>
+                </label>
+            </form>
+            <p>Or</p>
+            <button class="upload-button">
+                <input type="file" id="input-file-btn" } />Upload a file
+            </button>
+        </div>
+        <div id="cont-progress" style="visibility: hidden; width: 0; position: absolute;">
+            <h3 id="uploading-text">Uploading...</h3>
+            <progress id="progressbar" value="0" max="100" />
+            <p id="text-progress"></p>
+        </div>
+        <div id="cont-success" style="visibility: hidden; width: 0; position: absolute;">
+            <h3>Successfully Upload</h3>
+            <br />
+            <img id="imageUploaded" alt="imageDownload" />
+            <br />
+            <div id="content-link">
+                <input id="input-link"  />
+                <Button variant="outline-secondary" id="button-link">
+                    Copy link
+                </Button>
+            </div>
+            <input id="delete-button" value="Delete image">
+        </div>
+    </div>
+</body>
+<script type="text/javascript" th:src="@{/JS/DragAndDrop.js}"></script>
+
+</html>
