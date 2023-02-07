@@ -46,3 +46,11 @@ En la ruta *src/main/resources/* se encuentran los archivos de properties de spr
 
 El orden de prioridad es de la siguiente manera: 
 `ambiente > server > archivos .properties`
+
+
+---
+
+## Contacto
+
+Si tienes dudas sobre este u otro proyecto, o quieres contactarme, puedes realizarlo por medio de
+mi mail john.chamorroc@gmail.com o mi [http://54.237.78.115/](https://www.linkedin.com/in/john-edisson-chamorro-coral-76ab74228/](perfil) de LinkedIn
