@@ -151,10 +151,11 @@ h3{
 
 }
 #delete-button{
-    margin: 5px auto;
+    margin: 10px auto;
     cursor: pointer;
     font-size: 1rem;
     border-radius: 1rem;
+    border-width: 1px;
     max-width: 100px;
     font-family: 'Oswald', sans-serif;
     color: #cbd5e1;

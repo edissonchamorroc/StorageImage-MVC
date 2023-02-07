@@ -11,15 +11,26 @@ const contImage = document.getElementById("imageUploaded")
 const contInputLink = document.getElementById("input-link")
 const buttonCopyLink = document.getElementById("button-link")
 const buttonDeleteFile = document.getElementById("delete-button")
+const formArea = document.getElementById("form-file-upload")
 
-const uri_post = "http://localhost:8080/upload";
-const uri_get = "http://localhost:8080/view/";
-const uri_delete = "http://localhost:8080/delete/"
-var nameFile='';
+const uri_post = getAbsolutePath()+"upload";
+const uri_get = getAbsolutePath()+"view/";
+const uri_delete = getAbsolutePath()+"delete/"
+var nameFile = '';
 
-dropArea.addEventListener("drop", handleDrop, false)
+;['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+    dropArea.addEventListener(eventName, preventDefaults, false)
+  })
+  
+  function preventDefaults (e) {
+    e.preventDefault()
+    e.stopPropagation()
+  }
+
+
 dropArea.addEventListener("dragenter", highlight, false)
 dropArea.addEventListener("dragleave", unhighlight, false)
+dropArea.addEventListener("drop", handleDrop, false)
 inputArea.addEventListener("change", selectFile, false)
 inputButton.addEventListener("change", selectFile, false)
 buttonCopyLink.addEventListener("click", copy, false)
@@ -27,20 +38,17 @@ buttonDeleteFile.addEventListener("click", deleteImage, false)
 
 
 
-function highlight(e) {
+function highlight() {
     dropArea.classList.add('drag-active')
 }
 
-function unhighlight(e) {
+function unhighlight() {
     dropArea.classList.remove('drag-active')
 }
 
 
 
 async function handleDrop(e) {
-
-    e.preventDefault();
-    e.stopPropagation();
 
     await addImage(e.dataTransfer.files[0])
 
@@ -87,7 +95,7 @@ async function addImage(uploadFile) {
     request.onload = () => {
 
         nameFile = request.response;
-        contInputLink.value = uri_get + nameFile;
+        contInputLink.value = getAbsolutePath()+"view/" + nameFile;
         contImage.src = uri_get + nameFile;
 
     }
@@ -114,7 +122,7 @@ async function deleteImage() {
 
     }
 
-    request.open("DELETE", uri_delete + nameFile );
+    request.open("DELETE", uri_delete + nameFile);
 
     request.send();
 
@@ -145,4 +153,9 @@ function visibleDiv(div) {
     div.style.position = 'relative';
 }
 
+function getAbsolutePath() {
 
+    var loc = window.location;
+    var pathName = loc.pathname.substring(0, loc.pathname.lastIndexOf('/') + 1);
+    return loc.href.substring(0, loc.href.length - ((loc.pathname + loc.search + loc.hash).length - pathName.length));
+}
