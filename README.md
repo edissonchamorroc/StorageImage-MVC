@@ -53,4 +53,4 @@ El orden de prioridad es de la siguiente manera:
 ## Contacto
 
 Si tienes dudas sobre este u otro proyecto, o quieres contactarme, puedes realizarlo por medio de
-mi mail john.chamorroc@gmail.com o mi [https://www.linkedin.com/in/john-edisson-chamorro-coral-76ab74228/](perfil) de LinkedIn
+mi mail john.chamorroc@gmail.com o mi [perfil](https://www.linkedin.com/in/john-edisson-chamorro-coral-76ab74228/) de LinkedIn
