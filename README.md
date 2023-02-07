@@ -6,8 +6,8 @@ El proyecto usa Java 1.8, Maven y Springboot 2.7.8.
 
 Además se encuentra desplegado en AWS EC2 : http://54.237.78.115/
 
-En escencia el proyecto consiste de un apartado en donde se pueden subir imagenes a traves de la funcionalidad drag and drop,
-o a traves del sistema de buscar en el sistema de archivos.
+En escencia el proyecto consiste de un apartado en donde se pueden subir imagenes a través de la funcionalidad drag and drop,
+o a través del sistema de buscar en el sistema de archivos.
 
 ## Estructura de carpetas del proyecto
 
