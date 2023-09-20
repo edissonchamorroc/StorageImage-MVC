@@ -19,7 +19,7 @@ o a través del sistema de buscar en el sistema de archivos.
 ## Despliegues
 
 * [JDK y Maven]
-* [EC2]
+* [EC2] (Suspendido temporalmente)
 
 ---
 
